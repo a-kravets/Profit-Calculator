@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+    <title>Potential Profit Calculator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/growth.png" alt="" width="92" height="92">
+        <h2>Potential Profit Calculator</h2>
+        <p class="lead">Have a look how much money you can make</p>
+        <p><a href="#start-form" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Calculate your profit</a>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your potential profit</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Investment</h6>
+                <small class="text-muted">The amount you invested</small>
+              </div>
+              <span class="text-muted" id="resInv">$25000</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Period</h6>
+                <small class="text-muted">Investment horizon</small>
+              </div>
+              <span class="text-muted" id="resPeriod">3 months</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Portfolio</h6>
+                <small class="text-muted">Investment portfolio type</small>
+              </div>
+              <span class="text-muted" id="resPortf">Balanced</span>
+            </li>            
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Leverage</h6>
+                <small>Leverage you get</small>
+              </div>
+              <span class="text-success">1:200</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-danger">
+                <h6 class="my-0">Profit</h6>
+              </div>
+                <strong class="text-danger" id="total-profit">$30000</strong>
+              </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div class="text-danger">
+                <h6 class="my-0">Overall amount</h6>
+              </div>
+              <strong class="text-danger" id="total-revenue">$55000</strong>
+            </li>
+          </ul>
+
+
+        </div>
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3" id="start-form">Investment amount and period</h4>
+          <form class="needs-validation" novalidate>
+
+
+            <div class="mb-3">
+              <label for="username">Initial investment amount</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="investment" placeholder="25000" required>
+                <div class="input-group-append">
+                  <span class="input-group-text">USD / EUR / GBP</span>
+                </div>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username">Investment horizon/period</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="period" placeholder="3" required>
+                <div class="input-group-append">
+                  <span class="input-group-text">months</span>
+                </div>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your username is required.
+                </div>
+              </div>
+            </div>
+
+ 
+            <h4 class="mb-3">Portfolio type</h4>
+
+
+
+
+
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" for="credit">Conservative</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                <label class="custom-control-label" for="debit">Balanced</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" for="paypal">Agressive</label>
+              </div>
+            </div>
+
+
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" onclick="calcMath()" type="button">Calculate your profit</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Company Name</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="script.js"></script>
+
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+body {
+	background: #555;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 3em !important;
+	
+}
+
+h2.header2 {
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+
+
+
+.subheader {
+	font-size: 1.5em;
+}
+
+.banner-how {
+	
+	background-size: cover !important;
+	padding: 50px;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 5px black;
+}
+
+.btn {
+	margin-top: 25px;
+	text-transform: uppercase;
+}
+
+.btn:hover {
+	background-color: red !important;
+	border-color: red !important;
+}
+
+.card {
+	padding: 50px;
+	font-weight: lighter;
+  	text-align: center;
+}
+
+.card2 {
+	padding: 50px;
+	font-weight: lighter;
+  	text-align: center;
+
+}
+
+
+
+.footer {
+	padding: 50px;
+	text-align: center;
+}
+
+
+.form-group {
+  width: 100%;
+  max-width: 420px;
+  padding: 5px;
+  margin: auto;
+}
