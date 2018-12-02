@@ -6,7 +6,7 @@ function calcMath() {
     var investSumm = document.getElementById("investment").value;
     var investPeriod = document.getElementById("period").value;
     
-    
+
     if (document.getElementById("credit").checked) {
     	profitPercent = 0.2;
     	resultPortfolio = "Conservative";
@@ -29,5 +29,8 @@ function calcMath() {
 	document.getElementById("resPortf").innerHTML = resultPortfolio;
     document.getElementById("total-profit").innerHTML = "$" + profit;
     document.getElementById("total-revenue").innerHTML = "$" + totalRevenue;
+
+    location.href = "#potential-result";
+    
 
 }
